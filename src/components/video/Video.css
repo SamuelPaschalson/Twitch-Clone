@@ -1,0 +1,224 @@
+/*GENERAL VIDEO SECTION*/
+
+.video {
+    display: flex;
+}
+
+.video .side-menu {
+    display: grid;
+}
+
+
+/*VIDEO RIGHT SECTION*/
+
+.video-right video {
+    width: 520px;
+}
+
+.video-right .side-menu {
+    grid-template-areas: "profile-picture username" "profile-picture category" "profile-picture watchers" "tags tags" "description description";
+    grid-template-columns: 64px auto;
+    grid-template-rows: 20px 20px 20px 40px auto;
+    padding: 10px;
+    width: 220px;
+    background-color: #18181b;
+}
+
+.video-right .side-menu .profile-picture {
+    grid-area: profile-picture;
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.video-right .side-menu .username {
+    grid-area: username;
+    color: var(--primary-color);
+    font-weight: 500;
+    font-size: 0.85;
+}
+
+.video-right .side-menu .username:hover {
+    text-decoration: underline;
+    cursor: pointer;
+}
+
+.video-right .side-menu .category {
+    grid-area: category;
+    color: var(--primary-color);
+    font-size: 0.85rem;
+}
+
+.video-right .side-menu .category:hover {
+    text-decoration: underline;
+    cursor: pointer;
+}
+
+.video-right .side-menu .watchers {
+    grid-area: watchers;
+    font-size: 0.85rem;
+}
+
+.video-right .side-menu .tags {
+    grid-area: tags;
+}
+
+.video-right .side-menu .tags>.button {
+    margin: 0px 2px;
+}
+
+.video-right .side-menu .description {
+    grid-area: description;
+    font-size: 0.8rem;
+}
+
+
+/*VIDEO BOTTOM SECTION*/
+
+.video-bottom {
+    flex-direction: column;
+}
+
+.video-bottom .video-wrapper {
+    position: relative;
+    margin-bottom: 10px;
+}
+
+.video-bottom .video-wrapper:hover {
+    cursor: pointer;
+}
+
+.video-bottom .video-wrapper .left-bar-side {
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    bottom: 0px;
+    width: var(--shadow-size);
+    transform: scaleX(0);
+    background-color: green;
+    transition: all 100ms linear;
+    transform-origin: 0px 100% 0px;
+}
+
+.video-bottom .video-wrapper:hover .left-bar-side {
+    transform: scaleX(1);
+}
+
+.video-bottom .video-wrapper .left-bar-side::before {
+    content: " ";
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    border-top: var(--shadow-size) solid transparent;
+    border-right: var(--shadow-size) solid green;
+    border-bottom: var(--shadow-size) solid transparent;
+    transform: translateY(calc(-1 * var(--shadow-size))) scale(0);
+    transform-origin: left center 0px;
+    transition: all 100ms linear;
+}
+
+.video-bottom .video-wrapper:hover .left-bar-side::before {
+    transform: translateY(calc(-1 * var(--shadow-size))) scale(1);
+}
+
+.video-bottom .video-wrapper .bottom-bar-side {
+    position: absolute;
+    bottom: 0px;
+    left: 0px;
+    right: 0px;
+    height: var(--shadow-size);
+    transform: scaleY(0);
+    background-color: green;
+    transition: all 100ms linear;
+    transform-origin: 0px 100% 0px;
+}
+
+.video-bottom .video-wrapper:hover .bottom-bar-side {
+    transform: scaleY(1);
+}
+
+.video-bottom .video-wrapper .bottom-bar-side::before {
+    content: " ";
+    position: absolute;
+    bottom: 0px;
+    right: 0px;
+    border-left: var(--shadow-size) solid transparent;
+    border-top: var(--shadow-size) solid green;
+    border-right: var(--shadow-size) solid transparent;
+    transform: translateX(var(--shadow-size)) scale(0);
+    transform-origin: center bottom 0px;
+    transition: all 100ms linear;
+}
+
+.video-bottom .video-wrapper:hover .bottom-bar-side::before {
+    transform: translateX(var(--shadow-size)) scale(1);
+}
+
+.video-bottom .video-wrapper video {
+    transition: all 100ms linear;
+}
+
+.video-bottom .video-wrapper:hover video {
+    transform: translate(var(--shadow-size), calc(-1 * var(--shadow-size)));
+}
+
+.video-bottom .side-menu {
+    grid-template-areas: "profile-picture title" "profile-picture username" ". category" ". tags";
+    grid-template-columns: 64px auto;
+    grid-template-rows: 20px 20px 20px auto;
+}
+
+.video-bottom .side-menu .profile-picture {
+    grid-area: profile-picture;
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    object-position: center;
+    object-fit: cover;
+}
+
+.video-bottom .side-menu .profile-picture:hover {
+    cursor: pointer;
+}
+
+.video-bottom .side-menu .title {
+    grid-area: title;
+    font-size: 0.85rem;
+    font-weight: 500;
+}
+
+.video-bottom .side-menu .username {
+    grid-area: username;
+    color: #a1a1a1;
+    font-size: 0.85rem;
+}
+
+.video-bottom .side-menu .username:hover {
+    color: var(--primary-color);
+    cursor: pointer;
+}
+
+.video-bottom .side-menu .category {
+    grid-area: category;
+    color: #a1a1a1;
+    font-size: 0.85rem;
+}
+
+.video-bottom .side-menu .category:hover {
+    color: var(--primary-color);
+    cursor: pointer;
+}
+
+.video-bottom .side-menu .tags {
+    grid-area: tags;
+}
+
+.video-bottom .side-menu .tags>.button {
+    margin: 0px 2px;
+    margin-top: 5px;
+}
+
+.video-bottom .side-menu .tags>.button:first-of-type {
+    margin-right: 2px;
+}
